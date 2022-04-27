@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Currency App</string>
+    <string name="txt_currency_converter">Currency Converter</string>
+    <string name="txt_from">From</string>
+    <string name="txt_to">To</string>
+    <string name="txt_details">Details</string>
+    <string name="txt_to_amount">To Amount</string>
+    <string name="txt_from_amount">From Amount</string>
+</resources>
