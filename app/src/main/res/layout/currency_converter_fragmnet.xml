@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.poc.currency.ui.vm.CurrencyConverterViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="25dp">
+
+        <TextView
+            android:id="@+id/txtCurrencyTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_currency_converter"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.15" />
+
+        <TextView
+            android:id="@+id/txtFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_from"
+            app:layout_constraintStart_toStartOf="@+id/spinnerFromCurrency"
+            app:layout_constraintTop_toBottomOf="@+id/guideline" />
+
+        <TextView
+            android:id="@+id/txtTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_to"
+            app:layout_constraintStart_toStartOf="@+id/spinnerToCurrency"
+            app:layout_constraintTop_toBottomOf="@+id/guideline" />
+
+        <Spinner
+            android:id="@+id/spinnerFromCurrency"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:padding="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/imgSwitch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtFrom" />
+
+        <Spinner
+            android:id="@+id/spinnerToCurrency"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:padding="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgSwitch"
+            app:layout_constraintTop_toBottomOf="@+id/txtTo" />
+
+        <ImageView
+            android:id="@+id/imgSwitch"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/ic_switch"
+            android:contentDescription="@null"
+            android:onClick="@{() -> viewModel.onSwitchCurrencyClicked()}"
+            app:layout_constraintBottom_toTopOf="@+id/amountInputLayoutFrom"
+            app:layout_constraintEnd_toStartOf="@+id/spinnerToCurrency"
+            app:layout_constraintStart_toEndOf="@+id/spinnerFromCurrency"
+            app:layout_constraintTop_toBottomOf="@+id/guideline" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/amountInputLayoutFrom"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:hint="@string/txt_from_amount"
+            app:layout_constraintEnd_toStartOf="@+id/tilConvertedAmountTo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerFromCurrency">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTxtFrom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:text="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilConvertedAmountTo"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/txt_to_amount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/amountInputLayoutFrom"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerToCurrency">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTxtTo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:text="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="@{() -> viewModel.onDetailsClicked()}"
+            android:text="@string/txt_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/amountInputLayoutFrom" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
