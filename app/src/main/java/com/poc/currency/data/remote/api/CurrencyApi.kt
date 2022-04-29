@@ -8,7 +8,8 @@ import retrofit2.http.Query
 interface CurrencyApi {
 
     @GET("symbols")
-    suspend fun getCurrenciesSymbols(@Query("access_key") apiKey: String): CurrencyDto.CurrencyList
+    suspend fun getCurrenciesSymbols(@Query("access_key") apiKey: String):
+            CurrencyDto.CurrencyList
 
     @GET("{date}")
     suspend fun convert(

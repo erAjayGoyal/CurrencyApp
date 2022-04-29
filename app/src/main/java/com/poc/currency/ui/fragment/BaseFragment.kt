@@ -5,8 +5,18 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.poc.currency.ui.activity.CurrencyActivity
 
+/**
+ * Abstract class can hold all the common work used in fragments
+ * Showing/Hiding progress bar, Show error message
+ * Common DI classes reference used through out all the fragments
+ */
 abstract class BaseFragment : Fragment() {
 
+    /**
+     * Method use to show/hide progress bar
+     * Also handle window flag touch event when loading bar showing
+     * @param isLoading -> flag to show/hide progress bar
+     */
     fun setWindowFlag(isLoading: Boolean) {
         if (isLoading) {
             (requireActivity() as CurrencyActivity).showLoading()
