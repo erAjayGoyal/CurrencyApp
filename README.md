@@ -1,5 +1,5 @@
 # CurrencyApp
-A codebase for Currenct Converter App using Fixer API in Android Kotlin
+A codebase for Currency Converter App using Fixer API in Android Kotlin
 
 #### Application modules
 
@@ -10,13 +10,13 @@ A codebase for Currenct Converter App using Fixer API in Android Kotlin
 Tech stack used are - Clean Arch is used for designing the app
   1. Retrofit - Used for network call
   2. RxJava - Used for handling observerable and events
-  3. Corotunie - Used to execute network call
+  3. Coroutine - Used to execute network call
   4. Hilt - Used for dependency injection
   5. Phil Chart - Used for line chart
-  6. Mocikto - Used for API tetsing
+  6. Mockito - Used for API testing
 
 
-### Code development guidlines
+### Code development guidelines
 Please follow the below guidelines/suggestions while doing the development.
 
 1.       Removed unused import statements, variable declaration and method
