@@ -2,21 +2,19 @@ package com.poc.currency.data.repository
 
 import android.util.Log
 import android.util.MalformedJsonException
-import com.faris.data.util.NetworkConstants
 import com.google.gson.GsonBuilder
 import com.poc.currency.data.remote.dto.ErrorDto
+import com.poc.currency.data.util.NetworkConstants
 import com.poc.currency.domain.common.ResultState
 import com.poc.currency.domain.response.ErrorEntity
 import okhttp3.ResponseBody
 import retrofit2.HttpException
 import java.io.IOException
 import java.io.InterruptedIOException
-import java.lang.Exception
 import java.net.SocketException
 import java.net.SocketTimeoutException
 
 abstract class BaseRepositoryImpl {
-    private val logFormatter: String = "%s | %s"
     protected suspend fun <T : Any> apiCall(call: suspend () -> T): ResultState<T> {
         return try {
             val response = call()

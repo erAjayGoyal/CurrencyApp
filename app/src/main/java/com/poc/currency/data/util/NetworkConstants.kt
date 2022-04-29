@@ -1,10 +1,11 @@
-package com.faris.data.util
+package com.poc.currency.data.util
 
 import androidx.annotation.IntDef
 import androidx.annotation.StringDef
 
 object NetworkConstants {
     const val API_KEY = "35c858a4c96ef005b5dcce106d5f1128"
+
     @IntDef(
         NetworkErrorCodes.SERVICE_UNAVAILABLE,
         NetworkErrorCodes.MALFORMED_JSON,

@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicBoolean
 
 /**
  * A lifecycle-aware observable that sends only new updates after subscription, used for events like
- * navigation and Snackbar messages.
+ * navigation messages.
  *
  *
  * This avoids a common problem with events: on configuration change (like rotation) an update
@@ -44,9 +44,6 @@ class SingleLiveData<T> : MutableLiveData<T>() {
         super.setValue(t)
     }
 
-    /**
-     * Used for cases where T is Void, to make calls cleaner.
-     */
     @MainThread
     fun call() {
         value = null

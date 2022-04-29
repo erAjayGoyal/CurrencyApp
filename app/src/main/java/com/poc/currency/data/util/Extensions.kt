@@ -1,4 +1,4 @@
-package com.faris.data.util
+package com.poc.currency.data.util
 
 import android.text.format.DateFormat
 import java.util.*

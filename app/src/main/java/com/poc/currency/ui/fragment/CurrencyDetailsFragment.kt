@@ -10,11 +10,11 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.faris.data.util.NetworkConstants
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.poc.currency.R
+import com.poc.currency.data.util.NetworkConstants
 import com.poc.currency.databinding.CurrencyDetailsFragmentBinding
 import com.poc.currency.domain.response.currency.CurrencyEntity
 import com.poc.currency.ui.adapter.CurrencyHistoryAdapter

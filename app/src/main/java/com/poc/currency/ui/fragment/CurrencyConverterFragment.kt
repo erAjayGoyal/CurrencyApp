@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.faris.data.util.NetworkConstants
+import com.poc.currency.data.util.NetworkConstants
 import com.poc.currency.databinding.CurrencyConverterFragmnetBinding
 import com.poc.currency.ui.vm.CurrencyConverterViewModel
 import com.poc.currency.utils.Constants
